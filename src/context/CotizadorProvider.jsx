@@ -60,7 +60,8 @@ const CotizadorProvider = ({ children }) => {
                 datos,
                 handleChangeDatos,
                 cotizarSeguro,
-                resultado
+                resultado,
+                cargando
             }}
         >
             {children}
