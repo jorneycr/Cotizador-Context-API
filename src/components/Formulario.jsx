@@ -5,11 +5,11 @@ import Error from "./Error";
 
 const Formulario = () => {
 
-    const { error, setError, datos, handleChangeDatos } = useCotizador();
+    const { error, setError, datos, handleChangeDatos, cotizarSeguro } = useCotizador();
 
     const handleSubmit = e => {
         e.preventDefault()
-        if(Object.values(datos).includes('')){
+        if (Object.values(datos).includes('')) {
             setError('Todos los campos son obligatorios')
             return
         }
@@ -17,13 +17,14 @@ const Formulario = () => {
         setError('');
 
         // TODO : Cotizar
+        cotizarSeguro();
     }
 
     return (
         <>
             {error && <Error />}
             <form
-                onSubmit={handleSubmit} 
+                onSubmit={handleSubmit}
             >
                 <div className="my-5">
                     <label htmlFor="" className="block mb-3 font-bold text-gray-400 uppercase">
